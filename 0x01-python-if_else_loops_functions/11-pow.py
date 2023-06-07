@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# This is a function that adds two integers and returns the result
+# Returns input a to power
+# of input b
 
-def add(a, b):
-    return a + b
+def pow(a, b):
+    return a ** b
