@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Prints ASCII alphabet, 
+# Prints ASCII alphabet,
 # in reverse order, alternating lowercase and uppercase.
 
 for i in range(90, 64, -1):
