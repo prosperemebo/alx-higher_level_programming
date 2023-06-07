@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Prints all possible different combinations 
+# Prints all possible different combinations
 # of two digits.
 
 for i in range(0, 10):
