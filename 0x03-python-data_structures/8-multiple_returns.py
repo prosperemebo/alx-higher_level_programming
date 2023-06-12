@@ -4,8 +4,8 @@
 
 def multiple_returns(sentence):
     sol = (
-            len(sentence),
-            (None if len(sentence) == 0 else sentence[0])
+        len(sentence),
+        (None if len(sentence) == 0 else sentence[0])
     )
 
     return sol
