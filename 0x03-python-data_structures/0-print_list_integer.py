@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# This is a function that prints all integers of a list.
+# Prints all intergers in input list
 
 def print_list_integer(my_list=[]):
-    for i in my_list:
-        print("{:d}".format(i))
+	for num in my_list:
+		print("{:d}".format(num))
