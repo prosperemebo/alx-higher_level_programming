@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Returns a tuple with the length of 
+# Returns a tuple with the length of
 # a string and its first character
 
 def multiple_returns(sentence):
