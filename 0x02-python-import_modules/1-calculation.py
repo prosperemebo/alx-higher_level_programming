@@ -2,12 +2,11 @@
 # This is script prints the length and the 
 # list of its arguments.
 
-from sys import argv
+from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
-    print("{} {}{}{}".format(len(argv) - 1,
-          "argument", "s" if len(argv) - 1 > 1 else "",
-                             ":" if len(argv) - 1 > 0 else "."))
-
-    for i in range(1, len(argv)):
-        print("{}: {}".format(i, argv[i]))
-
+    a = 10
+    b = 5
+    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{} - {} = {}".format(a, b, sub(a, b)))
+    print("{} * {} = {}".format(a, b, mul(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))
