@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# This script prints the result of the addition of all arguments
+# Prints the result of the addition of all arguments
 
 from sys import argv
 if __name__ == "__main__":
