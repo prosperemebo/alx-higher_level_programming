@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# This is a script that prints the names
+# This is script prints the names
 # defined by the compiled module hidden_4.pyc .
 
 if __name__ == "__main__":
