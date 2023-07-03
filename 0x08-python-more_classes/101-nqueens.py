@@ -2,56 +2,74 @@
 from sys import argv
 
 
-def check_if_safe(i, j, board):
-    """
-    Args:
-        i : Argument
-        j : Argument
-        board : Argument
-
-    """
-    for element in board:
-        if (
-            i == element[0]
-            or j == element[1]
-            or abs(i - element[0]) == abs(j - element[1])
-        ):
+def is_safe(board, row, col, N):
+    # Check if there is a queen in the same column
+    for i in range(row):
+        if board[i][col] == 1:
             return False
+
+    # Check if there is a queen in the upper left diagonal
+    i, j = row, col
+    while i >= 0 and j >= 0:
+        if board[i][j] == 1:
+            return False
+        i -= 1
+        j -= 1
+
+    # Check if there is a queen in the upper right diagonal
+    i, j = row, col
+    while i >= 0 and j < N:
+        if board[i][j] == 1:
+            return False
+        i -= 1
+        j += 1
+
     return True
 
 
-def backtrack(n, row, q_board, s_board):
-    """
-    Args:
-        n : Argument
-        row : Argument
-        q_board : Argument
-        s_board : Argument
-
-    """
-    if row == n:
-        s_board.append(q_board.copy())
+def solve_nqueens(N, board, row, solutions):
+    if row == N:
+        # Found a solution, add it to the list
+        solution = []
+        for i in range(N):
+            for j in range(N):
+                if board[i][j] == 1:
+                    solution.append([i, j])
+        solutions.append(solution)
         return
 
-    for column in range(n):
-        if check_if_safe(row, column, q_board):
-            q_board.append([row, column])
-            backtrack(n, row + 1, q_board, s_board)
-            q_board.pop()
+    for col in range(N):
+        if is_safe(board, row, col, N):
+            board[row][col] = 1
+            solve_nqueens(N, board, row + 1, solutions)
+            board[row][col] = 0
 
 
-if len(argv) != 2:
-    print("Usage: nqueens N")
-    exit(1)
-if not argv[1].isdigit():
-    print("N must be a number")
-    exit(1)
-n = int(argv[1])
-if n < 4:
-    print("N must be at least 4")
-    exit(1)
-solution_board = []
-queen_board = []
-backtrack(n, 0, queen_board, solution_board)
-for row in solution_board:
-    print(row)
+def print_solutions(solutions):
+    for solution in solutions:
+        print(solution)
+
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
+
+    try:
+        N = int(sys.argv[1])
+    except ValueError:
+        print("N must be a number")
+        sys.exit(1)
+
+    if N < 4:
+        print("N must be at least 4")
+        sys.exit(1)
+
+    board = [[0] * N for _ in range(N)]
+    solutions = []
+    solve_nqueens(N, board, 0, solutions)
+    print_solutions(solutions)
+
+
+if __name__ == '__main__':
+    main()
