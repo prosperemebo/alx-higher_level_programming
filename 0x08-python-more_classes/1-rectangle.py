@@ -13,8 +13,8 @@ class Rectangle:
             width Argument.
             height Argument.
         """
-        self.width = 0
-        self.height = 0
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
