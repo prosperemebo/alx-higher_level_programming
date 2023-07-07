@@ -6,6 +6,7 @@ class Rectangle:
     """Defines a Rectangle."""
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -95,31 +96,6 @@ class Rectangle:
             return 0
         return 2 * (self.__width + self.__height)
 
-    def print_symbol(self, symbol):
-        """
-        Generate a square with input symbol.
-
-        Arguments:
-            symbol: string
-
-        Returns:
-            _type_: _description_
-        """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        square = ""
-        line_no = 0
-
-        for a in range(self.area()):
-            square += symbol
-            line_no += 1
-
-            if self.__width == line_no and a != self.area() - 1:
-                line_no = 0
-                square += "\n"
-
-        return square
-
     def __str__(self):
         """
         Generate a square.
@@ -133,7 +109,7 @@ class Rectangle:
         line_no = 0
 
         for a in range(self.area()):
-            square += "#"
+            square += str(self.print_symbol)
             line_no += 1
 
             if self.__width == line_no and a != self.area() - 1:
