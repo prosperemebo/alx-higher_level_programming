@@ -159,3 +159,16 @@ class Rectangle:
         if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
             return rect_1
         return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """
+        Generate a square based on input size.
+
+        Args:
+            size (int, optional): Size of square. Defaults to 0.
+
+        Returns:
+            Rectangle: Instance of rectangle.
+        """
+        return cls(size, size)
