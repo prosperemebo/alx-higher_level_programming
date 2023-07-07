@@ -102,14 +102,11 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         square = ""
-        line_no = 0
 
-        for a in range(self.area()):
-            square += "#"
-            line_no += 1
-
-            if self.__width == line_no:
-                line_no = 0
+        for h in range(self.__height):
+            for w in range(self.__width):
+                square += "#"
+            if h != self.__height - 1:
                 square += "\n"
 
         return square
