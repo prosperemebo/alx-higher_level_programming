@@ -95,10 +95,10 @@ class Rectangle:
             return 0
         return 2 * (self.__width + self.__height)
 
-    def print_symbol(self, symbol="#"):
+    def print_symbol(self, symbol):
         """
         Generate a square with input symbol.
-        
+
         Arguments:
             symbol: string
 
@@ -111,7 +111,7 @@ class Rectangle:
         line_no = 0
 
         for a in range(self.area()):
-            square += str(symbol)
+            square += symbol
             line_no += 1
 
             if self.__width == line_no and a != self.area() - 1:
