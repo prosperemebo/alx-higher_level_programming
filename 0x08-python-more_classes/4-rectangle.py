@@ -113,10 +113,10 @@ class Rectangle:
                 square += "\n"
 
         return square
-    
+
     def __repr__(self) -> str:
         """
-        Returns string rep of instance
+        Return string rep of instance.
 
         Returns:
             str: _description_
