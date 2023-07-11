@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-"""BaseGeometry Class."""
+"""
+Module for the class BaseGeometry
+"""
 
 
 class BaseGeometry:
-    """BaseGeometry class."""
+    """
+    Empty class with public instance method: def area(self)
+    """
 
     def area(self):
-        """Raise exception.
-
-        Raises:
-            Exception: _description_
+        """
+        Raises Exception with msg 'area() is not implemented'
         """
         raise Exception("area() is not implemented")
