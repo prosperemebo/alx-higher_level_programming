@@ -10,5 +10,5 @@ class BaseGeometry:
 
         Raises:
             Exception: _description_
-        """        
+        """
         raise Exception("area() is not implemented")
