@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module encodes input in JSON."""
+"""This module decodes input in JSON."""
 import json
 
 
@@ -9,4 +9,4 @@ def to_json_string(my_obj):
     Args:
         my_obj (_type_): _description_
     """
-    json.dumps(my_obj)
+    json.loads(my_obj)
