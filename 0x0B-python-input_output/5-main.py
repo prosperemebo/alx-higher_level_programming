@@ -11,6 +11,7 @@ my_dict = {
     'name': "John",
     'places': [ "San Francisco", "Tokyo" ],
     'is_active': True,
+    'info': {
         'age': 36,
         'average': 3.14
     }
