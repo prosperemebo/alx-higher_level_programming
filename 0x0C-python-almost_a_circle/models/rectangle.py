@@ -158,8 +158,8 @@ class Rectangle(Base):
         Returns:
             None
         """
-        output = "\n".join(
-            ["#" * self.width] * self.height
-        )
+        for _ in range(self.y):
+            print()
 
-        print(output)
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
