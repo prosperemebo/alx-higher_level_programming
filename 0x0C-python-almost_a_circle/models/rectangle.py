@@ -140,9 +140,15 @@ class Rectangle(Base):
         Returns:
             str: A string representation of the rectangle.
         """
-        str1 = f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
-        str2 = f"{self.width}/{self.height}"
-        return str1 + str2
+        str = "[{}] ({}) {}/{} - {}/{}".format(
+            type(self).__name__,
+            self.id,
+            self.x,
+            self.y,
+            self.width,
+            self.height
+        )
+        return str
 
     def display(self):
         """Print the rectangle's shape using '#'.
