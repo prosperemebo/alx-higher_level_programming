@@ -132,3 +132,17 @@ class Rectangle(Base):
             int: The area of the rectangle.
         """
         return self.width * self.height
+
+    def display(self):
+        """Print the rectangle's shape using '#'.
+
+        characters on the standard output.
+
+        Returns:
+            None
+        """
+        output = "\n".join(
+            ["#" * self.width] * self.height
+        )
+
+        print(output)
