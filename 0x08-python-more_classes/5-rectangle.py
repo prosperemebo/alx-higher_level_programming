@@ -22,7 +22,7 @@ class Rectangle:
         Width getter.
 
         Returns:
-            int: width od Rectangle
+            int: width of Rectangle
         """
         return self.__width
 
