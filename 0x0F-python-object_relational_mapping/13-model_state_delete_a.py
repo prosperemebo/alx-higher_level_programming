@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-This script lists all State objects.
+This script that deletes all State objects.
 
-from the database hbtn_0e_6_usa.
+with a name containing the letter a from a database
 """
 from sqlalchemy import create_engine
 from model_state import Base, State
@@ -20,7 +20,8 @@ localhost:3306/{}".format(db_user, db_password, db_name)
     engine = create_engine(uri)
     Session = sessionmaker(bind=engine)
     session = Session()
-    res = session.query(State).all()
+    res = session.query(State).filter(State.name.ilike("%a%")).all()
     for row in res:
-        print(f"{row.id}: {row.name}")
+        session.delete(row)
+    session.commit()
     session.close()

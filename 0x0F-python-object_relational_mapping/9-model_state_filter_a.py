@@ -5,7 +5,7 @@ This script that lists all State objects that.
 contain the letter 'a' from a database.
 """
 from sqlalchemy import create_engine
-from model_state import State
+from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 
 from sys import argv
