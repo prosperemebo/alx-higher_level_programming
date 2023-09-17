@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""This script lists all states from the database hbtn_0e_0_usa."""
+"""
+This script takes in an argument and displays all values in the.
+
+states table of hbtn_0e_0_usa
+"""
 import MySQLdb
 from sys import argv
 
@@ -17,7 +21,8 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY \'N%' ORDER BY id")
     result = cursor.fetchall()
 
     for row in result:
