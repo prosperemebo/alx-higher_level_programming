@@ -14,6 +14,7 @@ if __name__ == "__main__":
         user=db_user,
         password=db_password,
         database=db_name,
+        port=3306
     )
 
     cursor = db.cursor()
