@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-This script that creates the State 'California' with the City.
+This script lists all State objects, and.
 
-'San Francisco' from a database.
+corresponding City objects,contained in a databas
 """
 from sqlalchemy import create_engine
-from relationship_city import City
 from relationship_state import Base, State
+from relationship_city import City
 from sqlalchemy.orm import sessionmaker
 
 from sys import argv
@@ -22,9 +22,10 @@ localhost:3306/{}".format(db_user, db_password, db_name)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = State(name="California")
-    session.add(state)
-    city = City(name="San Francisco", state=state)
-    session.add(city)
-    session.commit()
+    query = session.query(State).outerjoin(City)\
+        .order_by(State.id, City.id).all()
+    for states in query:
+        print(f"{states.id}: {states.name}")
+        for city in states.cities:
+            print(f"    {city.id}: {city.name}")
     session.close()
