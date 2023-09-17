@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-This script prints the State object with the name passed as argument.
+This script prints the State object.
+
+with the name passed as argument.
 """
 from sqlalchemy import create_engine
 from model_state import State

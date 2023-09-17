@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-This script that lists all State objects that contain the letter 'a'
-from a database.
+This script that lists all State objects that.
+
+contain the letter 'a' from a database.
 """
 from sqlalchemy import create_engine
 from model_state import State
