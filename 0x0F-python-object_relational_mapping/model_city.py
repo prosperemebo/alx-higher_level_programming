@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Module that contains the class definition of a City
-"""
+"""Module that contains the class definition of a City."""
 
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
@@ -12,7 +10,7 @@ from sys import argv
 
 class City(Base):
     """
-    Represents a city in the database.
+    This class Represents a city in the database.
 
     Attributes:
         __tablename__ (str): The name of the database table.
@@ -22,6 +20,7 @@ class City(Base):
         state (State): The relationship to the associated state using
             the "State" class.
     """
+
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
