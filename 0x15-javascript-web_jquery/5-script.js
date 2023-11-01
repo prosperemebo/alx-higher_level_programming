@@ -1,8 +1,8 @@
 function main() {
   const addItem = $('#add_item');
-  const newItem = $('<li>Item</li>');
 
   addItem.click(function () {
+    const newItem = $('<li>Item</li>');
     $('ul.my_list').append(newItem);
   });
 }
